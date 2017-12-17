@@ -3,6 +3,7 @@ package com.ryanharter.mmmmm
 import android.graphics.*
 import android.graphics.drawable.Drawable
 import android.os.Build
+import android.support.annotation.Keep
 import java.util.*
 
 class DonutDrawable(sprinkleCount: Int) : Drawable() {
@@ -57,7 +58,7 @@ class DonutDrawable(sprinkleCount: Int) : Drawable() {
   private val sprinkleColors = intArrayOf(Color.RED, Color.WHITE, Color.YELLOW, Color.BLUE, Color.CYAN, Color.GREEN, Color.MAGENTA)
   private val sprinkles = generateSprinkles(sprinkleCount)
   private val sprinklePaint = Paint(Paint.ANTI_ALIAS_FLAG)
-  var sprinkleRotation = 0f
+  @get:Keep @set:Keep var sprinkleRotation = 0f
     set(value) {
       field = value
       invalidateSelf()
