@@ -3,7 +3,7 @@ package com.ryanharter.mmmmm
 import android.graphics.*
 import android.graphics.drawable.Drawable
 import android.os.Build
-import android.support.annotation.Keep
+import androidx.annotation.Keep
 import java.util.*
 
 class DonutDrawable(sprinkleCount: Int) : Drawable() {
@@ -88,8 +88,7 @@ class DonutDrawable(sprinkleCount: Int) : Drawable() {
     }
   }
 
-  override fun draw(canvas: Canvas?) {
-    canvas?.let { canvas ->
+  override fun draw(canvas: Canvas) {
       val saveCount = canvas.save()
       canvas.scale(scale, scale,
           bounds.width() / 2f,
@@ -150,7 +149,6 @@ class DonutDrawable(sprinkleCount: Int) : Drawable() {
       }
 
       canvas.restoreToCount(saveCount)
-    }
   }
 
   override fun setAlpha(alpha: Int) {
